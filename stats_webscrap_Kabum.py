@@ -32,12 +32,15 @@ estatisticas = {
     "Preço Mínimo": df["Preço"].min(),
     "Preço Máximo": df["Preço"].max(),
     "Desvio Padrão": df["Preço"].std(),
-    "Quantidade de Produtos": df["Preço"].count()
+    "Quantidade de Produtos": df["Produto"].count()
 }
 
-# Exibe no console
+# Exibe estatísticas no console
 for k, v in estatisticas.items():
-    print(f"{k}: R$ {v:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
+    if k == "Quantidade de Produtos":
+        print(f"{k}: {int(v)}")
+    else:
+        print(f"{k}: R$ {v:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
 # === 4. Produto mais barato e mais caro ===
 produto_mais_barato = df.loc[df["Preço"].idxmin()]
