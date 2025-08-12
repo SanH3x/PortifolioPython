@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time
 
+
 # Configuração do Selenium (modo headless para não abrir janela)
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -14,7 +15,7 @@ chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(options=chrome_options)
 
 # URL de pesquisa (exemplo: placa de vídeo)
-url = "https://www.kabum.com.br/hardware/placa-de-video-vga"
+url = "https://www.kabum.com.br/hardware/placa-de-video-vga?page_number=1&page_size=100&facet_filters=&sort=most_searched"
 driver.get(url)
 
 # Espera para carregamento dinâmico
@@ -24,16 +25,16 @@ time.sleep(5)
 produtos = []
 
 # Localizar os elementos dos produtos
-items = driver.find_elements(By.CSS_SELECTOR, "article.productCard")
+items = driver.find_elements(By.CSS_SELECTOR, "article.productCard")  # Seleciona o selector do produto com todas as infos
 
 for item in items:
     try:
-        nome = item.find_element(By.CSS_SELECTOR, "span.nameCard").text
+        nome = item.find_element(By.CSS_SELECTOR, "span.nameCard").text  # Nome do Produto
     except:
         nome = "Não encontrado"
     
     try:
-        preco = item.find_element(By.CSS_SELECTOR, "span.priceCard").text
+        preco = item.find_element(By.CSS_SELECTOR, "span.priceCard").text  # Caixa do preço no momento, considera promoções
     except:
         preco = "Não informado"
     
