@@ -1,0 +1,24 @@
+Texto: O relatório apenas mencionava pontos de atenção em relação a assédio eleitoral e tentativas de interferências de organizações criminosas, além do aumento nas inspeções da Polícia Rodoviária Federal em ônibus públicos no Nordeste nas eleições presidenciais de 2022, num suposto movimento para dissuadir o voto em uma região com maior presença de eleitores de Lula.
+Sentimento: Negativo
+Pontuações: {'neg': 0.042, 'neu': 0.958, 'pos': 0.0, 'compound': -0.296}
+--------------------------------------------------
+Texto: 
+Sentimento: Neutro
+Pontuações: {'neg': 0.0, 'neu': 0.0, 'pos': 0.0, 'compound': 0.0}
+--------------------------------------------------
+Texto: "A situação dos direitos humanos no Brasil piorou ao longo do ano. Os tribunais tomaram medidas amplas e desproporcionais para minar a liberdade de expressão e a liberdade na internet, bloqueando o acesso de milhões de usuários a informações", afirma.
+Sentimento: Negativo
+Pontuações: {'neg': 0.062, 'neu': 0.937, 'pos': 0.0, 'compound': -0.296}
+--------------------------------------------------
+Texto: Governo Trump critica Lula, chama Moraes de 'censor' e diz que situação dos direitos humanos no Brasil se deteriorou
+Sentimento: Negativo
+Pontuações: {'neg': 0.115, 'neu': 0.885, 'pos': 0.0, 'compound': -0.296}
+--------------------------------------------------
+Texto: Além disso, também critica a Europa e afirma que não há "abusos significativos de direitos humanos" em El Salvador, para onde o governo Trump enviou vários imigrantes deportados e onde governa um aliado do republicano, Nayib Bukele, que acaba de aprovar a reeleição ilimitada no país.
+Sentimento: Negativo
+Pontuações: {'neg': 0.052, 'neu': 0.948, 'pos': 0.0, 'compound': -0.296}
+--------------------------------------------------
+Texto: 
+Sentimento: Neutro
+Pontuações: {'neg': 0.0, 'neu': 0.0, 'pos': 0.0, 'compound': 0.0}
+--------------------------------------------------
