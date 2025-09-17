@@ -10,12 +10,14 @@ produtos = [
     {"Produto": "Herbicida Preciso", "Principio_Ativo": "Glifosato", "Quantidade": 25, "Unidade": "Litros"},
 ]
 
+
 # Criar DataFrame
 df = pd.DataFrame(produtos)
 
 # Exibir tabela organizada
 print(df)
 
+
 # Exemplo: filtrar apenas herbicidas
 print("\nHerbicidas cadastrados:")
-print(df[df["Produto"].str.contains("Bactericida")])
+print(df[df["Produto"].str.contains("Fungicida")])
