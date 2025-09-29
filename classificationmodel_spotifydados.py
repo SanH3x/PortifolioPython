@@ -24,8 +24,10 @@ def show_head(df, name="DataFrame", n=5):
         print(df.head(n))
 
 RANDOM_SEED = 42
-DATA_PATH = "C:/Users/heito/PycharmProjects/PortifolioPython/spotify_churn_dataset.csv"  # caminho fornecido pelo usuário/upload
-OUTPUT_MODEL_PATH = "C:/Users/heito/PycharmProjects/PortifolioPython/best_model.pkl"
+
+# caminho fornecido pelo usuário/upload da database Spotify Analysis Dataset 2025
+DATA_PATH = "C:/Users/heito/PycharmProjects/PortifolioPython/spotify_churn_dataset.csv"  
+OUTPUT_MODEL_PATH = "/mnt/data/best_model.pkl"
 
 print("1) Carregando dataset:", DATA_PATH)
 df = pd.read_csv(DATA_PATH)
@@ -186,16 +188,30 @@ cm = confusion_matrix(y_test, best['y_pred'])
 print("Matriz de Confusão:\n", cm)
 
 # Plot da matriz de confusão
-fig, ax = plt.subplots(figsize=(5,4))
-im = ax.imshow(cm, interpolation='nearest')
-ax.set_title("Matriz de Confusão - " + best_name)
+classes = np.unique(y_test)
+fig, ax = plt.subplots(figsize=(5, 4))
+im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+# Título e eixos
+ax.set_title(f"Matriz de Confusão - {best_name}")
 ax.set_xlabel("Predito")
 ax.set_ylabel("Real")
-ax.xaxis.set_ticklabels([''] + list(np.unique(best['y_pred'])))
-ax.yaxis.set_ticklabels([''] + list(np.unique(y_test)))
+# Ticks com rótulos das classes
+ax.set_xticks(np.arange(len(classes)))
+ax.set_yticks(np.arange(len(classes)))
+ax.set_xticklabels(classes)
+ax.set_yticklabels(classes)
+# Rotacionar labels do eixo X para não sobrepor
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+# Inserir os números nas células
 for i in range(cm.shape[0]):
     for j in range(cm.shape[1]):
-        ax.text(j, i, format(cm[i, j], 'd'), ha="center", va="center")
+        ax.text(
+            j, i, format(cm[i, j], "d"),
+            ha="center", va="center",
+            color="white" if cm[i, j] > cm.max() / 2 else "black"
+        )
+# Barra de cores
+fig.colorbar(im, ax=ax)
 plt.tight_layout()
 plt.show()
 
